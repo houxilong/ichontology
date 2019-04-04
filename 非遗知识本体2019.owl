@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rel="http://purl.org/vocab/relationship/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ich="http://www.ich.cn/ontology/">
+    <Ontology>
+        <dc:creator>侯西龙</dc:creator>
+        <dc:title>非物质文化遗产知识本体(Ontology for Knowledge Managment of Intangible Cultrual Heritage)</dc:title>
+        <dc:date>2019-01-20</dc:date>
+        <versionInfo>1.0.2</versionInfo>
+        <dc:rights>版权所有，侯西龙，武汉大学信息资源研究中心。</dc:rights>
+        <rdfs:comment>非物质文化遗产知识本体，为非遗项目的知识组织与知识管理提供统一知识表示模型。该本体模型包含10个类、26个对象属性、26个数据属性。</rdfs:comment>
+        <rdfs:comment>The Ontology for Knowledage Organization of Intangible Cultural Heritage</rdfs:comment>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+    </AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/vocab/relationship/apprenticeTo -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/apprenticeTo">
+        <inverseOf rdf:resource="http://purl.org/vocab/relationship/mentorOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>徒弟</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/childOf -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/childOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/firendOf -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/firendOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>朋友</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/influencedBy -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/influencedBy">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>受谁影响</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/mentorOf -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/mentorOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>师傅</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/parentOf -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/parentOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>子女</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/spouseOf -->
+
+    <ObjectProperty rdf:about="http://purl.org/vocab/relationship/spouseOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>配偶</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/batch -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/batch">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Batch"/>
+        <rdfs:comment>项目或传承人认证批准</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/certificationLevel -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/certificationLevel">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Level"/>
+        <rdfs:comment>认证级别，国家-省-市-县</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/city -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/city">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>所属地市</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/country -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/country">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>所属国家</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/county -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/county">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>所属县</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/hasAddress -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/hasAddress">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>传承人居住地</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/hasInheritor -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/hasInheritor">
+        <inverseOf rdf:resource="http://www.ich.cn/ontology/isInheritorOf"/>
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment>非遗项目传承人</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/hasPlace -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/hasPlace">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>非遗项目申报地区</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/hasType -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/hasType">
+        <inverseOf rdf:resource="http://www.ich.cn/ontology/isTypeOf"/>
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Category"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/isInheritorOf -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/isInheritorOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/isMemberOf -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/isMemberOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/isTypeOf -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/isTypeOf">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:comment>项目的类型</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/nativePlace -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/nativePlace">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>传承人籍贯</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/province -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/province">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>所属省份</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/town -->
+
+    <ObjectProperty rdf:about="http://www.ich.cn/ontology/town">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Place"/>
+        <rdfs:comment>所属村镇</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:comment>类型的上位关系</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:comment>类型的下位关系</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:range rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:comment>类型相关关系</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/abstract -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/abstract">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目简介</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/description">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目基本内容</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/alternative -->
+
+    <DatatypeProperty rdf:about="http://purl.org/dc/terms/alternative">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>别称</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/acceptedDate -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/acceptedDate">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>认证时间</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/basicFeature -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/basicFeature">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>基本特征</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/code -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/code">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>编号</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/ethnicity -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/ethnicity">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>民族</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/hasSkill -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/hasSkill">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>传承人技能</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/heritageDes -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/heritageDes">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目传承谱系</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/history -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/history">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目历史沿革</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/inheritance -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/inheritance">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>传承人传承谱系</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/mainValue -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/mainValue">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>主要价值</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/professionalTitle -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/professionalTitle">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>职位职称</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/protection -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/protection">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目保护措施</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/resume -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/resume">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>人物简介</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/situation -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/situation">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>存续状态</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/situationOfskill -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/situationOfskill">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>传承人技艺传承的历史与现状</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ich.cn/ontology/wikipediaArticle -->
+
+    <DatatypeProperty rdf:about="http://www.ich.cn/ontology/wikipediaArticle">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:comment>维基百科地址</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/houxilong/ontologies/2018/10/untitled-ontology-91#achievement -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/houxilong/ontologies/2018/10/untitled-ontology-91#achievement">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>传承人的活动及成就</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/birthday -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/birthday">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>出生年月</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/depiction -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/depiction">
+        <rdfs:domain rdf:resource="http://www.ich.cn/ontology/ICHProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>项目的图像</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>性别</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/img -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/img">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>人物图像</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>人物名称</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/title -->
+
+    <DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/title">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>人物的职务职称</rdfs:comment>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ich.cn/ontology/Batch -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/Batch">
+        <rdfs:comment>项目或传承人认证批次</rdfs:comment>
+        <rdfs:label>批次</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/CNCategory -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/CNCategory">
+        <rdfs:subClassOf rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:comment>中国十大分类法</rdfs:comment>
+        <rdfs:label>中国分类</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/Category -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/Category">
+        <rdfs:comment>非遗项目类型类</rdfs:comment>
+        <rdfs:label>类型</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/ICHProject -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/ICHProject">
+        <rdfs:comment>非遗项目类</rdfs:comment>
+        <rdfs:label>非遗项目</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/Level -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/Level">
+        <rdfs:label>级别</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/Place -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/Place">
+        <rdfs:comment>行政区划</rdfs:comment>
+        <rdfs:label>地理位置</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://www.ich.cn/ontology/UNCategory -->
+
+    <Class rdf:about="http://www.ich.cn/ontology/UNCategory">
+        <rdfs:subClassOf rdf:resource="http://www.ich.cn/ontology/Category"/>
+        <rdfs:comment>联合国分类法</rdfs:comment>
+        <rdfs:label>联合国分类</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:label>代理</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment>非遗相关组织机构</rdfs:comment>
+        <rdfs:label>组织机构</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment>传承人类</rdfs:comment>
+        <rdfs:label>传承人</rdfs:label>
+    </Class>
+    <rdf:Description>
+        <dc:description>http://localhost:8080/lodebuild/LODELogo.png</dc:description>
+        <dc:description>非遗知识本体是对非遗内涵及其组成要素高度的抽象概括，而形成的一个形式化的概念模型。本体模型的构建是在本体理论与现有研究成果的基础上，按照领域本体设计与构建的思路与步骤，通过分析非遗项目的知识结构和构成要素，构建了非遗知识本体模型。旨在为非遗知识描述及知识关联，提供统一规范的知识表示模型和数据模型。</dc:description>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
