@@ -10,7 +10,7 @@ ich(custom)|http://www.ich.cn/ontology/
 dc|http://purl.org/dc/elements/1.1/
 dct|http://purl.org/dc/terms/
 ## The object properties
-| object property| Domain | Range | Explanation |
+| Object Property| Domain | Range | Explanation |
 -|-|-|-
 ich:hasInheritor|ich:Items|foaf:Agent|an item's inheritor
 ich:isInheritorOf|foaf:Agent|ich:Items| the inheritor of an item
@@ -25,3 +25,5 @@ ich:hasPlace|ich:Item|ich:Place| The location of the item.
 ich:certificationLevel|ich:Item ich:Person|ich:Level| "National - provincial - city - county" level
 ich:batch|ich:Item ich:Person|ich:Batch|The batches included in the list, such as the first batch, the second batch, etc.
 
+## The data properties
+The data properties are defined according to internationan metadata standards.
