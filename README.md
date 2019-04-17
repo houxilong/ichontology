@@ -27,3 +27,7 @@ ich:batch|ich:Item ich:Person|ich:Batch|The batches included in the list, such a
 
 ## The data properties
 The data properties are defined according to internationan metadata standards.
+
+## Visualization of Ontology Structure
+
+![OntoGrf-protege](http://https://github.com/houxilong/ichontology/OntoGraf.png)
