@@ -30,4 +30,4 @@ The data properties are defined according to internationan metadata standards.
 
 ## Visualization of Ontology Structure
 
-![OntoGrf-protege](https://github.com/houxilong/ichontology/OntoGraf.png)
+![OntoGrf-protege](https://raw.githubusercontent.com/houxilong/ichontology/master/OntoGraf.png)
