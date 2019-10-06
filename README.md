@@ -6,7 +6,7 @@ prefix | URI
 -|-
 foaf|http://xmlns.com/foaf/0.1/
 rel|http://purl.org/vocab/relationship/
-ich(custom)|http://www.ich.cn/ontology/
+ich(custom)|http://dh.whu.edu.cn/lodich/ontology#
 dc|http://purl.org/dc/elements/1.1/
 dct|http://purl.org/dc/terms/
 ## The object properties
